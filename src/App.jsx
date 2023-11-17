@@ -1,19 +1,25 @@
 import React from "react";
-import { Provider } from "mobx-react";
-import AuthStatus from "./components/AuthStatus";
-import createAuthStore from "./stores/Store";
-
+import { Link, Outlet } from "react-router-dom";
 const App = () => {
-	const authStore = createAuthStore();
-
 	return (
-		<Provider authStore={authStore}>
-			<div className="container mx-auto p-4">
-				<h1 className="text-4xl font-bold mb-4">MobX Authentication Example</h1>
-				<AuthStatus />
+		<>
+			<div className="container mx-auto">
+				<nav className="bg-gray-200 rounded-md py-5 px-3 flex gap-4 text-2xl">
+					<Link to="/invoices">
+						{" "}
+						<span>Invoices</span>
+					</Link>
+					<Link to="/expenses">
+						{" "}
+						<span>Expenses</span>
+					</Link>
+				</nav>
+				<Outlet />
+				{/* An <Outlet> should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route. */}
+
+				{/* https://reactrouter.com/en/main/components/outlet */}
 			</div>
-		</Provider>
+		</>
 	);
 };
-
 export default App;

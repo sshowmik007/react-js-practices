@@ -19,7 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.19.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.4",
@@ -40,6 +40,8 @@
     "vitest": "^0.34.6"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/jsdom.global.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/jsdom.global.js"
+    ]
   }
 }
